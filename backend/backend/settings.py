@@ -25,7 +25,7 @@ SECRET_KEY = '(!-$uk8c#ekhn*0fkwp&+o6w55osr1ul76a@a2p@)&o07&h9^='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://aicefirst.pythonanywhere.com/']
+ALLOWED_HOSTS = [] #'http://aicefirst.pythonanywhere.com/'
 
 
 # Application definition

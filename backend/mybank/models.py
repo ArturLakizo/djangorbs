@@ -1,6 +1,10 @@
 from django.db import models
+import json
 import uuid
 from django.utils import datetime_safe
+from django import forms
+
+
 
 class Bid(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -31,6 +35,15 @@ class Bid(models.Model):
     email2 = models.CharField(max_length=200, blank=True, default='')
     product2 = models.CharField(max_length=200, blank=True, default='')
     PRIMARY = models.CharField(max_length=200, blank=True, default='')
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if "+375" not in self.phone:
+            raise forms.ValidationError("You have wrong telephone number")
+        super(Bid, self).save(force_insert, force_update)
+
+
+
 
 
 
